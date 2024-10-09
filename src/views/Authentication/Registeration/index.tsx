@@ -36,7 +36,7 @@ const RegistrationView: FC<IRegistrationViewProps> = () => {
         </h1>
       </div>
       <h1 className='font-archivo text-2xl'>Sign Up</h1>
-      <div className='mt-3 flex flex-col'>
+      <div className='mt-3 flex flex-col w-72'>
         <Button
           className='rounded-full mt-4 bg-[#F8F8F8]'
           variant={'outline'}
@@ -56,7 +56,7 @@ const RegistrationView: FC<IRegistrationViewProps> = () => {
       <div className='my-4'>
         <h1>or</h1>
       </div>
-      <div className='flex flex-col gap-3'>
+      <div className='flex flex-col gap-3 w-72'>
         <Input placeholder='First Name' />
         <Input placeholder='Last Name' />
         <Input placeholder='Email Address' />

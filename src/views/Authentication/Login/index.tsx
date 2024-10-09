@@ -8,10 +8,13 @@ import { SiFacebook } from 'react-icons/si';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { setupFsCheck } from 'next/dist/server/lib/router-utils/filesystem';
 
 const LoginPage = () => {
   const [active, setActive] = useState<string>('rising');
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [email, useEmail] = useState<String>('');
+  const [password, setPassword] = useState<string>('');
 
   const router = useRouter();
 
@@ -19,7 +22,7 @@ const LoginPage = () => {
     router.push('/auth/onboard');
   };
   return (
-    <div className='flex justify-center items-center flex-col'>
+    <div className='flex justify-center items-center flex-col w-full'>
       <div className='flex justify-between my-9'>
         <h1
           className={`pr-4 text-sm text-black transition-all duration-300 ease-in-out ${active === 'rising' ? 'border-b border-b-orange-400 text-orange-400' : ''} cursor-pointer`}
@@ -35,7 +38,7 @@ const LoginPage = () => {
         </h1>
       </div>
       <h1 className='font-archivo text-2xl'>Login</h1>
-      <div className='mt-4 flex flex-col'>
+      <div className='mt-4 flex flex-col w-72'>
         <Button
           className='rounded-full mt-4 bg-[#F8F8F8]'
           variant={'outline'}
@@ -56,7 +59,10 @@ const LoginPage = () => {
         <h1>or</h1>
       </div>
       <div className='flex flex-col gap-4'>
-        <Input placeholder='Email Address' />
+        <Input
+          placeholder='Email Address'
+          className='w-72'
+        />
         <div className='relative'>
           <Input
             placeholder='Password'

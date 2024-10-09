@@ -1,10 +1,16 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import onBoard from '../../../../public/assets/images/onboard.png';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-
+import { useRouter } from 'next/navigation';
 const OnBoard = () => {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push('/auth/info');
+  };
   return (
     <div className='flex justify-center items-center flex-col'>
       <div>
@@ -27,6 +33,7 @@ const OnBoard = () => {
       </div>
       <div className='mt-12'>
         <Button
+          onClick={handleClick}
           className='bg-orange-400 rounded-full text-white w-64'
           variant={'outline'}
         >
