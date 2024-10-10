@@ -9,9 +9,6 @@ export const InitialValues: formValues = {
   gender: '',
   areasOfinterest: [],
   education: '',
-  position: '',
-  companyName: '',
-  StartDate: '',
-  EndDate: '',
+  experiences: [], 
   bio: '',
 };

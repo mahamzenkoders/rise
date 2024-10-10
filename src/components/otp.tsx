@@ -1,7 +1,8 @@
-import { Field } from 'formik';
+import { Field, useFormikContext } from 'formik';
 import React, { useRef, useState } from 'react';
 
 const OTP = () => {
+  const { setFieldValue } = useFormikContext();
   const [code, setCode] = useState(['', '', '', '']);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
@@ -12,12 +13,14 @@ const OTP = () => {
     const value = e.target.value;
 
     if (value.length === 1 && index < 3) {
-      inputRefs.current[index + 1]?.focus(); 
+      inputRefs.current[index + 1]?.focus();
     }
 
     const newCode = [...code];
     newCode[index] = value;
     setCode(newCode);
+
+    setFieldValue('otp', newCode.join(''));
   };
 
   const handleKeyDown = (
@@ -34,7 +37,7 @@ const OTP = () => {
       <h2 className='text-lg font-bold'>Please check your email</h2>
       <p className='text-sm text-gray-600 mb-4'>
         We've sent a code with an activation code to your email, paste this code
-        here
+        here.
       </p>
 
       <div className='flex space-x-2 mb-4'>
@@ -42,7 +45,7 @@ const OTP = () => {
           <Field
             name='otp'
             key={index}
-            ref={(el: HTMLInputElement | null) => {
+            innerRef={(el: HTMLInputElement | null) => {
               inputRefs.current[index] = el;
             }}
             type='text'

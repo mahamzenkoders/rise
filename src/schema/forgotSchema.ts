@@ -6,10 +6,10 @@ export const ForgetPasswordSchema=yup.object().shape({
 })
 
 export const OTPSchema=yup.object().shape({
-    f_email:yup.string().required("OTP is required")
+    otp:yup.string().required("OTP is required")
 })
 
 
 export const NewPasswordSchema=yup.object().shape({
-    f_email:yup.string().required("New Password is required")
+    newpass:yup.object().required("New Password is required")
 })

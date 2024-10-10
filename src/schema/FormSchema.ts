@@ -23,13 +23,19 @@ export const AreaOfInterestSchema = Yup.object().shape({
       .min(1, "At least one area of interest is required"),
   });
 
-export const ProfessionalInfoSchema=Yup.object().shape({
-    education:Yup.string().required("Education is Required"),
-    position:Yup.string().required("Position is Required"),
-    companyName:Yup.string().required("Company Name is Required"),
-    StartDate: Yup.string().required('Start Date is required'),
-  EndDate: Yup.string().required('End Date is required'),
-})
+  export const ProfessionalInfoSchema = Yup.object().shape({
+    education: Yup.string().required("Education is Required"),
+    experiences: Yup.array()
+      .of(
+        Yup.object().shape({
+          position: Yup.string().required("Position is Required"),
+          companyName: Yup.string().required("Company Name is Required"),
+          startDate: Yup.string().required('Start Date is required'),
+          endDate: Yup.string().required('End Date is required'),
+        })
+      )
+      .min(1, "At least one experience is required"),
+  });
 
 export const BioSchema=Yup.object().shape({
     bio:Yup.string().required("Bio is required")

@@ -11,10 +11,14 @@ import {
   OTPSchema,
   NewPasswordSchema,
 } from '@/schema/forgotSchema';
+import ResetPassword from '@/components/newpassword';
+import { useRouter } from 'next/navigation';
 
 const ForgotPassword = () => {
   const [step, setStep] = useState<number>(1);
   const [formValues, setFormValues] = useState<FormikValues>(ForgetPassword);
+
+  const router = useRouter();
 
   const handleNextStep = async (formik: any) => {
     const errors = await formik.validateForm();
@@ -36,10 +40,11 @@ const ForgotPassword = () => {
     const errors = await formik.validateForm();
     const isFormValid = formik.isValid && formik.dirty;
     console.log(errors);
+    router.push('/auth/passwordchanged');
 
     if (isFormValid) {
       setFormValues(values);
-      if (step < 4) {
+      if (step < 3) {
         setStep(prevStep => prevStep + 1);
       }
     }
@@ -68,7 +73,7 @@ const ForgotPassword = () => {
         <Form>
           {step === 1 && <Forgot />}
           {step === 2 && <OTP />}
-          {step === 3 && <div>Hello</div>}
+          {step === 3 && <ResetPassword />}
           <div className='flex justify-center'>
             <Button
               className='rounded-full bg-orange-400 w-full text-white mt-3'
@@ -76,7 +81,7 @@ const ForgotPassword = () => {
               type='button'
               onClick={() => handleNextStep(formik)}
             >
-              Next
+              {step === 3 ? 'Reset' : 'Next'}
             </Button>
           </div>
         </Form>
