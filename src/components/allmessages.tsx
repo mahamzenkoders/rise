@@ -61,7 +61,7 @@ const AllMessages: React.FC = () => {
   ];
 
   return (
-    <div className='w-1/5 bg-gray-100 m-3 border-r h-screen'>
+    <div className='w-1/5 bg-gray-100 m-3 border-r h-screen sm:block hidden'>
       {messages.map((msg, index) => (
         <MessagePreview
           key={index}
