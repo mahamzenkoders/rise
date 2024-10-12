@@ -31,7 +31,7 @@ const Info = () => {
     if (isFormValid) {
       if (step === 4) {
         handleSubmit(formik.values, formik);
-        router.push('/auth/forgetpassword');
+        router.push('/auth/dashboard');
       } else {
         console.log(formik.values);
         setStep(prevStep => prevStep + 1);
