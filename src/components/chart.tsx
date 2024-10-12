@@ -7,10 +7,10 @@ const chartData = [
   { day: 'Mon', profile: 186 },
   { day: 'Tue', profile: 305 },
   { day: 'Wed', profile: 237 },
-  { day: 'Thu', profile: 73 },
+  { day: 'Thu', profile: 102 },
   { day: 'Fri', profile: 209 },
   { day: 'Sat', profile: 214 },
-  { day: 'Sun', profile: 254 },
+  { day: 'Sun', profile: 100 },
 ];
 
 const chartConfig = {

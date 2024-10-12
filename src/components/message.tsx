@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Input } from './ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { IoSend } from 'react-icons/io5';
 
 interface MessageBubbleProps {
   text: string;
@@ -75,7 +76,7 @@ const Message: React.FC = () => {
           />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        Dmitriy Dolorenko
+        Gerardo Menard
       </div>
       <div className='overflow-y-auto h-[70%]'>
         {messages.map((msg, index) => (
@@ -97,7 +98,7 @@ const Message: React.FC = () => {
           className='bg-orange-500 text-white p-2 rounded-full'
           onClick={handleSendMessage}
         >
-          ↑
+          <IoSend />
         </button>
       </div>
     </div>

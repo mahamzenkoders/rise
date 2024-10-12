@@ -1,8 +1,11 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 interface User {
   name: string;
+  profilePicture: string;
 }
 
 interface MessageViewProps {
@@ -16,18 +19,23 @@ const MessagePreview: React.FC<MessageViewProps> = ({
   user,
   message,
   time,
-  isActive,
 }) => {
+  const [isActive, setisActive] = useState<boolean>(false);
+
+  const handleActive = () => {
+    setisActive(!isActive);
+  };
   return (
     <div
+      onClick={handleActive}
       className={`flex items-center p-3 bg-white mb-3 ${isActive ? 'bg-orange-300 text-white font-normal' : 'hover:bg-gray-100'} rounded-lg cursor-pointer`}
     >
       <Avatar className='mx-3'>
         <AvatarImage
-          src='https://github.com/shadcn.png'
-          alt='@shadcn'
+          src={user.profilePicture}
+          alt={user.name}
         />
-        <AvatarFallback>CN</AvatarFallback>
+        <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
       </Avatar>
       <div className={`flex-1 ${isActive ? `text-white` : `text-black`}`}>
         <h4 className='font-bold text-sm'>{user.name}</h4>
@@ -39,26 +47,30 @@ const MessagePreview: React.FC<MessageViewProps> = ({
 };
 
 const AllMessages: React.FC = () => {
-  const messages = [
-    {
-      user: { name: 'Dmitriy Dolorenko' },
-      message: 'You: Hello what time zone do you...',
-      time: 'NOW 27',
-      isActive: true,
-    },
-    {
-      user: { name: 'Robert Fox' },
-      message: 'You: Sure, I’d be happy to tell you',
-      time: 'NOW 21',
-      isActive: false,
-    },
-    {
-      user: { name: 'Maham' },
-      message: 'You: I am ok ',
-      time: 'Oct 21',
-      isActive: false,
-    },
-  ];
+  const [messages, setMessages] = useState<MessageViewProps[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('https://randomuser.me/api/?results=10');
+      const data = await response.json();
+
+      const fetchedMessages = data.results.map((user: any) => ({
+        user: {
+          name: `${user.name.first} ${user.name.last}`,
+          profilePicture: user.picture.large,
+        },
+        message: 'You: Hello, how can I help you?',
+        time: 'NOW',
+      }));
+      // if (fetchedMessages.length > 0) {
+      //   fetchedMessages[0].isActive = true;
+      // }
+
+      setMessages(fetchedMessages);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className='w-1/5 bg-gray-100 m-3 border-r h-screen sm:block hidden'>

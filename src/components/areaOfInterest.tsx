@@ -5,11 +5,6 @@ import { Label } from './ui/label';
 import { useFormikContext } from 'formik';
 import { formValues } from '@/types/Interfaces/form.values';
 
-interface Interest {
-  category: string;
-  interest: string;
-}
-
 interface Category {
   label: string;
   interest: string[];
