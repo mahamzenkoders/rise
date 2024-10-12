@@ -57,7 +57,7 @@ const RightSide = () => {
           <h1 className='text-orange-400'>3</h1>
         </div>
 
-        <div className='my-14 flex justify-between bg-white p-3 rounded'>
+        <div className='my-4 flex justify-between bg-white p-3 rounded'>
           <h1 className='font-semibold'>Help & Support</h1>
           <IoIosArrowForward />
         </div>

@@ -6,9 +6,22 @@ import { FiMessageCircle } from 'react-icons/fi';
 import { CiSearch } from 'react-icons/ci';
 import Image from 'next/image';
 import Logo from '../../public/assets/images/Black Logo.png';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const [active, setActive] = useState<String>('opportunity');
+
+  const router = useRouter();
+
+  const handleClick = (text: string) => {
+    if (text === 'opportunity') {
+      setActive('opportunity');
+      router.push('/dashboard');
+    } else {
+      setActive('message');
+      router.push('/dashboard/messages');
+    }
+  };
   return (
     <div className='flex p-4 items-center justify-between'>
       <div>
@@ -19,7 +32,9 @@ const Header = () => {
       </div>
       <div className='items-center gap-5 sm:flex hidden'>
         <div
-          onClick={() => setActive('opportunity')}
+          onClick={() => {
+            handleClick('opportunity');
+          }}
           className={`flex gap-2 cursor-pointer items-center ${active === 'opportunity' ? `text-orange-400` : ''}`}
         >
           <CiSearch
@@ -28,7 +43,9 @@ const Header = () => {
           <h1 className=''>Opportunities</h1>
         </div>
         <div
-          onClick={() => setActive('message')}
+          onClick={() => {
+            handleClick('message');
+          }}
           className={`flex gap-2 cursor-pointer items-center ${active === 'message' ? `text-orange-400` : ''}`}
         >
           <FiMessageCircle
