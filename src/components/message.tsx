@@ -4,33 +4,10 @@ import React, { useState } from 'react';
 import { Input } from './ui/input';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { IoSend } from 'react-icons/io5';
-
-interface MessageBubbleProps {
-  text: string;
-  time: string;
-  isSender: boolean;
-}
-
-const MessageBubble: React.FC<MessageBubbleProps> = ({
-  text,
-  time,
-  isSender,
-}) => {
-  return (
-    <div className={`flex ${isSender ? 'justify-end' : 'justify-start'} mb-2`}>
-      <div
-        className={`${isSender ? 'bg-orange-400 text-white' : 'bg-gray-200 text-gray-700'} p-3 rounded-lg max-w-xs`}
-      >
-        <p>{text}</p>
-        <span
-          className={`text-xs ${isSender ? 'text-gray-700' : 'text-gray-600'}`}
-        >
-          {time}
-        </span>
-      </div>
-    </div>
-  );
-};
+import { IoMdArrowRoundBack } from 'react-icons/io';
+import { MessageBubbleProps } from '@/types/Interfaces/messagebubble';
+import { useRouter } from 'next/navigation';
+import MessageBubble from './messagebubble';
 
 const Message: React.FC = () => {
   const [messages, setMessages] = useState<MessageBubbleProps[]>([
@@ -50,6 +27,8 @@ const Message: React.FC = () => {
 
   const [newMessage, setNewMessage] = useState('');
 
+  const router = useRouter();
+
   const handleSendMessage = () => {
     if (newMessage.trim()) {
       const time = new Date().toLocaleTimeString([], {
@@ -66,9 +45,17 @@ const Message: React.FC = () => {
     }
   };
 
+  const handleClick = () => {
+    router.push('/dashboard/allmessages');
+  };
+
   return (
     <div className='flex-1 bg-gray-50 px-6 h-screen'>
       <div className='p-3 mb-8 flex items-center gap-2 text-black text-2xl bg-gray-100 rounded font-semibold'>
+        <IoMdArrowRoundBack
+          onClick={handleClick}
+          className='md:hidden block'
+        />
         <Avatar>
           <AvatarImage
             src='https://github.com/shadcn.png'

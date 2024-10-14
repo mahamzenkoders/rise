@@ -5,7 +5,7 @@ import { ProfileStats } from './chart';
 
 const RightSide = () => {
   return (
-    <div className='w-72 bg-gray-100 rounded p-4 border-l sm:block hidden m-2'>
+    <div className='w-72 bg-gray-100 rounded p-4 border-l md:block hidden m-2'>
       <div className='flex items-center mb-4'>
         <Avatar>
           <AvatarImage

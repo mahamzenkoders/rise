@@ -13,6 +13,10 @@ const Header = () => {
 
   const router = useRouter();
 
+  const handleProfile = () => {
+    router.push('/profileinfo');
+  };
+
   const handleClick = (text: string) => {
     if (text === 'opportunity') {
       setActive('opportunity');
@@ -56,7 +60,7 @@ const Header = () => {
       </div>
       <div className='flex gap-3 items-center'>
         <FaRegBell className={`text-2xl text-orange-400`} />
-        <Avatar>
+        <Avatar onClick={handleProfile}>
           <AvatarImage
             src='https://github.com/shadcn.png'
             alt='@shadcn'

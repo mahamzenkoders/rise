@@ -1,14 +1,12 @@
 import MainContent from '@/components/MainContent';
-import RightSide from '@/components/Profile';
 import SideNav from '@/components/SideNav';
 import React from 'react';
 
 const DashBoard = () => {
   return (
-    <div className='flex min-h-screen'>
+    <div className='flex'>
       <SideNav />
       <MainContent />
-      <RightSide />
     </div>
   );
 };

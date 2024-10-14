@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { SkeletonAllMessage } from './skeleton/skeleton.message';
 
 interface User {
   name: string;
@@ -22,9 +23,7 @@ const MessagePreview: React.FC<MessageViewProps> = ({
 }) => {
   const [isActive, setisActive] = useState<boolean>(false);
 
-  const handleActive = () => {
-    setisActive(!isActive);
-  };
+  const handleActive = () => {};
   return (
     <div
       onClick={handleActive}
@@ -48,10 +47,11 @@ const MessagePreview: React.FC<MessageViewProps> = ({
 
 const AllMessages: React.FC = () => {
   const [messages, setMessages] = useState<MessageViewProps[]>([]);
+  const [loading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('https://randomuser.me/api/?results=10');
+      const response = await fetch('https://randomuser.me/api/?results=30');
       const data = await response.json();
 
       const fetchedMessages = data.results.map((user: any) => ({
@@ -62,18 +62,28 @@ const AllMessages: React.FC = () => {
         message: 'You: Hello, how can I help you?',
         time: 'NOW',
       }));
-      // if (fetchedMessages.length > 0) {
-      //   fetchedMessages[0].isActive = true;
-      // }
 
       setMessages(fetchedMessages);
+      setIsLoading(false);
     };
 
     fetchData();
   }, []);
 
+  if (loading) {
+    return (
+      <div>
+        <SkeletonAllMessage />
+        <SkeletonAllMessage />
+        <SkeletonAllMessage />
+        <SkeletonAllMessage />
+        <SkeletonAllMessage />
+        <SkeletonAllMessage />
+      </div>
+    );
+  }
   return (
-    <div className='w-1/5 bg-gray-100 m-3 border-r h-screen sm:block hidden'>
+    <div className='w-1/5 bg-gray-100 m-3 border-r h-screen sm:block hidden overflow-y-auto scrollbar-thin'>
       {messages.map((msg, index) => (
         <MessagePreview
           key={index}

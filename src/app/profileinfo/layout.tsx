@@ -1,7 +1,7 @@
 import Header from '@/components/header';
-import RightSide from '@/components/Profile';
+import ProfileNavigation from '@/components/ProfileSideBar';
 
-export default function DashBoardLayout({
+export default function ProfieLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -10,11 +10,8 @@ export default function DashBoardLayout({
     <div>
       <Header />
       <div className='flex min-h-screen'>
-        <div className='flex-grow'>
-        {children}
-
-        </div>
-        <RightSide />
+        <ProfileNavigation />
+        <div className='flex-grow'>{children}</div>
       </div>
     </div>
   );

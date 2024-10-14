@@ -1,0 +1,25 @@
+import React from 'react';
+
+const JobDetailsSidebar = () => {
+  return (
+    <div className='w-1/4 p-6 bg-white h-screen border-r'>
+      <div className='text-center mb-4'>
+        <div className='bg-gray-200 rounded-full h-16 w-16 mx-auto flex items-center justify-center'>
+          <span className='text-xl font-bold text-gray-500'>W</span>
+        </div>
+        <h2 className='mt-3 text-lg font-semibold'>Webbbin.company</h2>
+        <p className='text-gray-500'>Nairobi, Kenya</p>
+      </div>
+      <div className='flex justify-center mt-4'>
+        <button className='bg-orange-500 text-white py-2 px-6 rounded-full mr-4'>
+          APPLY
+        </button>
+        <button className='border border-gray-300 text-gray-600 py-2 px-6 rounded-full'>
+          SAVE
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default JobDetailsSidebar;
