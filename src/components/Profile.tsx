@@ -1,11 +1,22 @@
+'use client';
+
 import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { IoIosArrowForward } from 'react-icons/io';
 import { ProfileStats } from './chart';
+import { useRouter } from 'next/navigation';
 
 const RightSide = () => {
+  const router = useRouter();
+  const handleClick = (str: string) => {
+    if (str === 'saved') {
+      router.push('/dashboard/saved');
+    } else {
+      router.push('/dashboard/application-submitted');
+    }
+  };
   return (
-    <div className='w-72 bg-gray-100 rounded p-4 border-l md:block hidden m-2'>
+    <div className='w-72 bg-gray-100 rounded p-4 border-l lg:block hidden m-2'>
       <div className='flex items-center mb-4'>
         <Avatar>
           <AvatarImage
@@ -29,17 +40,27 @@ const RightSide = () => {
         </div>
         <p className='text-xs mt-1'>75% complete</p>
       </div>
-      <div className='my-4 bg-white p-3 rounded flex justify-between'>
+      <div
+        className='my-4 bg-white p-3 rounded flex justify-between cursor-pointer'
+        onClick={() => {
+          handleClick('application');
+        }}
+      >
         <h1 className=''>Applications Submitted:</h1>
-        <h1 className='text-orange-400'>3</h1>
+        <h1 className='text-orange-400'>4</h1>
       </div>
-      <div className='my-4 bg-white p-3 rounded flex justify-between'>
+      <div className='my-4 bg-white p-3 rounded flex justify-between cursor-pointer'>
         <h1 className=''>Recommendations:</h1>
         <h1 className='text-orange-400'>340</h1>
       </div>
-      <div className='my-4 bg-white p-3 rounded flex justify-between'>
+      <div
+        className='my-4 bg-white p-3 rounded flex justify-between cursor-pointer'
+        onClick={() => {
+          handleClick('saved');
+        }}
+      >
         <h1 className=''>Saved:</h1>
-        <h1 className='text-orange-400'>231</h1>
+        <h1 className='text-orange-400'>2</h1>
       </div>
       <div className='mb-4'>
         <div className='mt-2 h-full bg-white mb-7 py-3'>

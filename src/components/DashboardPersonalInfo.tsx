@@ -1,17 +1,22 @@
 'use client';
 
 import React, { useState } from 'react';
+import ProfileImage from '../../public/assets/images/Avatar.png';
+import Image from 'next/image';
+import { Button } from './ui/button';
+import DatePicker from 'react-datepicker';
+import { FaCalendarAlt } from 'react-icons/fa';
 
-const PersonalInfoForm = () => {
+const PersonalInfoPage = () => {
   const [formData, setFormData] = useState({
     firstName: 'Taras',
     lastName: 'Vlasenko',
-    dateOfBirth: '',
+    dateOfBirth: '08-08-2005',
     phone: '+234 435 687 11',
     email: 'kalenskyi.ui@gmail.com',
     gender: 'Male',
-    country: '',
-    city: '',
+    country: 'Pakistan',
+    city: 'Karachi',
   });
 
   const handleInputChange = (e: { target: { name: any; value: any } }) => {
@@ -25,8 +30,8 @@ const PersonalInfoForm = () => {
   return (
     <div className='flex-1 bg-white p-8 h-screen overflow-y-auto'>
       <div className='flex items-center mb-6'>
-        <img
-          src='/path/to/avatar.png'
+        <Image
+          src={ProfileImage}
           alt='Profile'
           className='w-16 h-16 rounded-full mr-4'
         />
@@ -36,7 +41,7 @@ const PersonalInfoForm = () => {
         </div>
       </div>
 
-      <div className='grid grid-cols-2 gap-4 mb-4'>
+      <div className='grid md:grid-cols-6 grid:cols:3 gap-4 mb-4'>
         <div>
           <label className='block text-sm font-semibold mb-2'>First Name</label>
           <input
@@ -59,19 +64,21 @@ const PersonalInfoForm = () => {
         </div>
       </div>
 
-      <div className='grid grid-cols-2 gap-4 mb-4'>
+      <div className='grid grid-cols-1 w-1/2 gap-4 mb-4'>
         <div>
           <label className='block text-sm font-semibold mb-2'>
             Date of Birth
           </label>
-          <input
-            type='text'
-            name='dateOfBirth'
-            value={formData.dateOfBirth}
-            placeholder='mm/dd/yyyy'
-            onChange={handleInputChange}
-            className='w-full p-2 border rounded'
-          />
+          <div className='flex items-center border rounded'>
+            <span className='p-1 cursor-pointer'>
+              <FaCalendarAlt className='text-orange-400' />
+            </span>
+            <DatePicker
+              dateFormat='MM/dd/yyyy'
+              placeholderText='mm/dd/yyyy'
+              className='border-0 p-1 flex-grow text-sm'
+            />
+          </div>
         </div>
         <div>
           <label className='block text-sm font-semibold mb-2'>Phone</label>
@@ -85,7 +92,7 @@ const PersonalInfoForm = () => {
         </div>
       </div>
 
-      <div className='grid grid-cols-2 gap-4 mb-4'>
+      <div className='grid grid-cols-6 gap-4 mb-4 items-center'>
         <div>
           <label className='block text-sm font-semibold mb-2'>Location*</label>
           <select
@@ -100,6 +107,7 @@ const PersonalInfoForm = () => {
           </select>
         </div>
         <div>
+          <label className='block text-sm font-semibold mb-2'>City*</label>
           <select
             name='city'
             value={formData.city}
@@ -113,7 +121,7 @@ const PersonalInfoForm = () => {
         </div>
       </div>
 
-      <div className='mb-4'>
+      <div className='mb-4 w-1/2'>
         <label className='block text-sm font-semibold mb-2'>E-mail</label>
         <input
           type='email'
@@ -163,16 +171,22 @@ const PersonalInfoForm = () => {
         </div>
       </div>
 
-      <div className='flex justify-end space-x-4'>
-        <button className='py-2 px-6 bg-gray-300 text-gray-700 rounded'>
+      <div className='flex justify-start space-x-8'>
+        <Button
+          variant={'outline'}
+          className='py-4 px-10 bg-gray-300 text-gray-700 rounded-full'
+        >
           Cancel
-        </button>
-        <button className='py-2 px-6 bg-orange-500 text-white rounded'>
+        </Button>
+        <Button
+          variant={'outline'}
+          className='py-4 px-10 bg-orange-500 text-white rounded-full'
+        >
           Save
-        </button>
+        </Button>
       </div>
     </div>
   );
 };
 
-export default PersonalInfoForm;
+export default PersonalInfoPage;

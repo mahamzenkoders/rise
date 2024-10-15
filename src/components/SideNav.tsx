@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 
 const SideNav = () => {
   return (
-    <div className='w-72 bg-gray-100 rounded p-5 m-2 border-r md:block hidden'>
+    <div className='w-72 bg-gray-100 rounded p-5 m-2 border-r lg:block hidden'>
       <h2 className='text-lg font-bold mb-4'>Filters</h2>
       <div className='mb-4'>
         <label className='block mb-1'>Opportunity Type</label>

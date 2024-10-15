@@ -1,6 +1,14 @@
+'use client';
+
 import React from 'react';
+import { Button } from './ui/button';
+import { useRouter } from 'next/navigation';
 
 const JobDetailsSidebar = () => {
+  const router = useRouter();
+  const handleApply = () => {
+    router.push('/dashboard/job-applied');
+  };
   return (
     <div className='w-1/4 p-6 bg-white h-screen border-r'>
       <div className='text-center mb-4'>
@@ -11,12 +19,15 @@ const JobDetailsSidebar = () => {
         <p className='text-gray-500'>Nairobi, Kenya</p>
       </div>
       <div className='flex justify-center mt-4'>
-        <button className='bg-orange-500 text-white py-2 px-6 rounded-full mr-4'>
+        <Button
+          className='bg-orange-500 text-white py-2 px-6 rounded-full mr-4'
+          onClick={handleApply}
+        >
           APPLY
-        </button>
-        <button className='border border-gray-300 text-gray-600 py-2 px-6 rounded-full'>
+        </Button>
+        <Button className='border border-gray-300 text-gray-600 py-2 px-6 rounded-full'>
           SAVE
-        </button>
+        </Button>
       </div>
     </div>
   );

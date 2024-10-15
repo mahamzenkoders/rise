@@ -72,7 +72,7 @@ const AllMessages: React.FC = () => {
 
   if (loading) {
     return (
-      <div>
+      <div className='md:block hidden'>
         <SkeletonAllMessage />
         <SkeletonAllMessage />
         <SkeletonAllMessage />

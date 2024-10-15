@@ -13,7 +13,6 @@ const ProfessionalInfo: React.FC = () => {
   const [hasExperience, setHasExperience] = useState(false);
 
   const addExperience = () => {
-    // Validation before adding new experience
     const invalidExperience = values.experiences.find(
       exp => !exp.position || !exp.companyName,
     );
@@ -86,7 +85,7 @@ const ProfessionalInfo: React.FC = () => {
             onChange={() => {
               setHasExperience(!hasExperience);
               if (!hasExperience) {
-                addExperience(); // Add initial experience if checked
+                addExperience(); 
               }
             }}
             className='ml-2 toggle-checkbox'

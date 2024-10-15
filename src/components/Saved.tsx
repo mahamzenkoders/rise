@@ -1,12 +1,10 @@
 import React from 'react';
 import OpportunityCard from './opportunitycard';
 
-const MainContent = () => {
+const Saved = () => {
   return (
     <div className='flex-1 p-6 bg-white overflow-y-auto m-2'>
-      <h1 className='text-2xl font-semibold mb-6'>
-        All Opportunities (23,421)
-      </h1>
+      <h1 className='text-2xl font-semibold mb-6'>Saved (2)</h1>
       <div className='mb-4 flex justify-between'>
         <input
           type='text'
@@ -15,7 +13,7 @@ const MainContent = () => {
         />
       </div>
       <div>
-        {Array(6)
+        {Array(2)
           .fill(null)
           .map((_, index) => (
             <OpportunityCard key={index} />
@@ -25,4 +23,4 @@ const MainContent = () => {
   );
 };
 
-export default MainContent;
+export default Saved;

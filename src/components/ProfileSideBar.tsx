@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import { CgNotes, CgProfile } from 'react-icons/cg';
 import { FaGraduationCap } from 'react-icons/fa';
 import { IoDocumentTextOutline } from 'react-icons/io5';
@@ -11,6 +11,7 @@ import { Button } from './ui/button';
 
 const ProfileNavigation = () => {
   const router = useRouter();
+  const pathname = usePathname();
 
   const navigationItems = [
     {
@@ -41,16 +42,19 @@ const ProfileNavigation = () => {
     },
   ];
 
+  const handleNavigation = (path: string) => {
+    router.push(path);
+  };
+
   return (
-    <div className='w-1/4 p-6 bg-gray-100 h-screen border-r'>
+    <div className='w-1/4 p-6 bg-gray-100 h-screen border-r md:block hidden'>
       <ul className='space-y-4'>
         {navigationItems.map((item, index) => (
           <li
             key={index}
-            className={`cursor-pointer text-3xl items-center bg-white p-3 m-4${
-              '/profile/personal-info' === item.path
-                ? 'text-orange-500'
-                : 'text-gray-600'
+            onClick={() => handleNavigation(item.path)}
+            className={`cursor-pointer text-3xl items-center bg-white p-3 m-4 ${
+              pathname === item.path ? 'text-orange-500' : 'text-gray-600'
             }`}
           >
             <div className='flex gap-3 text-xl p-2 items-center'>
@@ -61,7 +65,10 @@ const ProfileNavigation = () => {
         ))}
       </ul>
 
-      <div className='mt-52 flex gap-1 items-center text-4xl bg-white m-4 p-3 '>
+      <div
+        onClick={() => router.push('/auth/login')}
+        className='mt-48 flex gap-1 items-center text-4xl bg-white m-4 p-3 cursor-pointer'
+      >
         <IoIosLogOut className='text-orange-400' />
         <Button className=' text-black text-xl'>Log Out</Button>
       </div>

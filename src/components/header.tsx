@@ -14,7 +14,7 @@ const Header = () => {
   const router = useRouter();
 
   const handleProfile = () => {
-    router.push('/profileinfo');
+    router.push('/profile/personal-info');
   };
 
   const handleClick = (text: string) => {
@@ -60,7 +60,10 @@ const Header = () => {
       </div>
       <div className='flex gap-3 items-center'>
         <FaRegBell className={`text-2xl text-orange-400`} />
-        <Avatar onClick={handleProfile}>
+        <Avatar
+          className='cursor-pointer'
+          onClick={handleProfile}
+        >
           <AvatarImage
             src='https://github.com/shadcn.png'
             alt='@shadcn'

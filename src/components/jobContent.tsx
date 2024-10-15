@@ -18,7 +18,7 @@ const JobContentSection = () => {
     <div className='flex-1 bg-white p-6 h-screen overflow-y-auto'>
       <IoMdArrowRoundBack
         onClick={handleBack}
-        className='text-3xl'
+        className='text-3xl cursor-pointer'
       />
       <h1 className='text-3xl font-bold my-3'>
         Search for a talent for tech startup
