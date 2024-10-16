@@ -7,7 +7,7 @@ import { LuMessageSquare } from 'react-icons/lu';
 import { useRouter } from 'next/navigation';
 
 const MobileNavigation = () => {
-  const [active, setActive] = useState<string>('home');
+  const [active, setActive] = useState<string>('opportunity');
   const router = useRouter();
 
   const HandleActive = (str: string) => {
@@ -24,7 +24,8 @@ const MobileNavigation = () => {
       router.push('/profile');
       setActive('profile');
     } else {
-      router.push('/home');
+      router.push('/dashboard');
+      setActive('/opportunity');
     }
   };
   return (

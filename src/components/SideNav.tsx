@@ -3,9 +3,9 @@ import { Button } from './ui/button';
 
 const SideNav = () => {
   return (
-    <div className='w-72 bg-gray-100 rounded p-5 m-2 border-r lg:block hidden'>
+    <div className='w-screen h-screen bg-gray-100 rounded p-5 m-2 border-r lg:w-72'>
       <h2 className='text-lg font-bold mb-4'>Filters</h2>
-      <div className='mb-4'>
+      <div className='mb-4 w-full'>
         <label className='block mb-1'>Opportunity Type</label>
         <select className='w-full border p-2 rounded'>
           <option value=''>Select type</option>

@@ -5,7 +5,9 @@ import React from 'react';
 const DashBoard = () => {
   return (
     <div className='flex'>
-      <SideNav />
+      <div className='lg:block hidden'>
+        <SideNav />
+      </div>
       <MainContent />
     </div>
   );
