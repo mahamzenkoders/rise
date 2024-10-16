@@ -5,7 +5,9 @@ import React from 'react';
 const Page = () => {
   return (
     <div className='flex'>
-      <SideNav />
+      <div className='lg:block hidden'>
+        <SideNav />
+      </div>
       <Saved />
     </div>
   );

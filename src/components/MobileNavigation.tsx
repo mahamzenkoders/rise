@@ -27,7 +27,7 @@ const MobileNavigation = () => {
       router.push('/dashboard');
       setActive('/opportunity');
     }
-  };
+  }
   return (
     <div className='flex justify-between border-t-rose-50 px-9 fixed bottom-0 w-full bg-white z-10 py-2'>
       <div
