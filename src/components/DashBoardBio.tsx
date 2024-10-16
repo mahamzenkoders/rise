@@ -2,14 +2,25 @@
 
 import React, { useState } from 'react';
 import { Label } from './ui/label';
-import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import DashBoardInterest from './DashBoardInterest';
+import { useRouter } from 'next/navigation';
+import { IoMdArrowBack } from 'react-icons/io';
 
 const DashBoardBioAndInterestPage = () => {
   const [active, setActive] = useState<string>('bio');
+  
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/profile');
+  };
   return (
     <div className='p-5'>
+      <IoMdArrowBack
+        onClick={handleClick}
+        className='lg:hidden block text-5xl my-5 '
+      />
       <h1 className='text-3xl'>Bio and Interest</h1>
       <div className='flex my-9'>
         <h1

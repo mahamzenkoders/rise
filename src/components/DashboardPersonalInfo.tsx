@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { Button } from './ui/button';
 import DatePicker from 'react-datepicker';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { IoMdArrowBack } from 'react-icons/io';
+import { useRouter } from 'next/navigation';
 
 const PersonalInfoPage = () => {
   const [formData, setFormData] = useState({
@@ -27,8 +29,18 @@ const PersonalInfoPage = () => {
     }));
   };
 
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/profile');
+  };
+
   return (
-    <div className='flex-1 bg-white p-8 h-screen overflow-y-auto'>
+    <div className='flex-1 bg-white p-8 h-screen  overflow-y-auto'>
+      <IoMdArrowBack
+        onClick={handleClick}
+        className='lg:hidden block text-5xl my-5 '
+      />
       <div className='flex items-center mb-6'>
         <Image
           src={ProfileImage}

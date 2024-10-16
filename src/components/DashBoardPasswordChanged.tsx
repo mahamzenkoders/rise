@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { IoEyeSharp } from 'react-icons/io5';
+import { IoMdArrowBack } from 'react-icons/io';
+import { useRouter } from 'next/navigation';
 
 const DashBoardPasswordChanged: React.FC = () => {
   const [oldPassword, setOldPassword] = useState('');
@@ -10,13 +12,22 @@ const DashBoardPasswordChanged: React.FC = () => {
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const router = useRouter();
 
   const handleSave = () => {
     console.log('Saving new password...');
   };
 
+  const handleClick = () => {
+    router.push('/profile');
+  };
+
   return (
     <div className='p-6 max-w-md'>
+      <IoMdArrowBack
+        onClick={handleClick}
+        className='lg:hidden block text-5xl my-5 '
+      />
       <h2 className='text-2xl font-semibold mb-6'>Change Password</h2>
 
       <div className='mb-4'>

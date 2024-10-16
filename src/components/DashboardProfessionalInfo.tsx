@@ -4,17 +4,28 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { Button } from './ui/button';
 import { Switch } from './ui/switch';
 import { Input } from './ui/input';
+import { useRouter } from 'next/navigation';
+import { IoMdArrowBack } from 'react-icons/io';
 
 const DashBoardProfessionalInfo = () => {
   const [positions, setPositions] = useState([{}]);
   const [hasExperience, setHasExperience] = useState(false);
+  const router = useRouter();
 
   const addPosition = () => {
     setPositions([...positions, {}]);
   };
 
+  const handleClick = () => {
+    router.push('/profile');
+  };
+
   return (
     <div className='p-6'>
+      <IoMdArrowBack
+        onClick={handleClick}
+        className='lg:hidden block text-5xl my-5 '
+      />
       <h2 className='text-2xl font-semibold mb-4'>Education / Experience</h2>
 
       <div className='mb-6'>

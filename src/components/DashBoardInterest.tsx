@@ -67,7 +67,7 @@ const categories: Category[] = [
 
 const DashBoardInterest = () => {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col mb-20'>
       <div className='grid grid-cols-2 gap-2 w-[90%] h-[75%] scrollbar-thin scrollbar-thumb-gray-400 overflow-y-auto'>
         {categories.map(category => (
           <div key={category.label}>
