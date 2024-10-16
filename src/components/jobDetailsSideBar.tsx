@@ -10,7 +10,7 @@ const JobDetailsSidebar = () => {
     router.push('/dashboard/job-applied');
   };
   return (
-    <div className='w-1/4 p-6 bg-white h-screen border-r'>
+    <div className='w-1/4 p-6 bg-white h-screen border-r lg:block hidden'>
       <div className='text-center mb-4'>
         <div className='bg-gray-200 rounded-full h-16 w-16 mx-auto flex items-center justify-center'>
           <span className='text-xl font-bold text-gray-500'>W</span>

@@ -4,10 +4,12 @@ import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { IoIosArrowForward } from 'react-icons/io';
 import { ProfileStats } from './chart';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 const RightSide = () => {
+  const pathname = usePathname();
   const router = useRouter();
+
   const handleClick = (str: string) => {
     if (str === 'saved') {
       router.push('/dashboard/saved');
@@ -15,8 +17,13 @@ const RightSide = () => {
       router.push('/dashboard/application-submitted');
     }
   };
+
+  const isDashboard = pathname.startsWith('/dashboard');
+
   return (
-    <div className='w-72 bg-gray-100 rounded p-4 border-l lg:block hidden m-2'>
+    <div
+      className={`w-72 bg-gray-100 rounded p-4 border-l ${isDashboard ? 'lg:block hidden' : 'lg:hidden block w-full'} p-2`}
+    >
       <div className='flex items-center mb-4'>
         <Avatar>
           <AvatarImage
@@ -42,9 +49,7 @@ const RightSide = () => {
       </div>
       <div
         className='my-4 bg-white p-3 rounded flex justify-between cursor-pointer'
-        onClick={() => {
-          handleClick('application');
-        }}
+        onClick={() => handleClick('application')}
       >
         <h1 className=''>Applications Submitted:</h1>
         <h1 className='text-orange-400'>4</h1>
@@ -55,9 +60,7 @@ const RightSide = () => {
       </div>
       <div
         className='my-4 bg-white p-3 rounded flex justify-between cursor-pointer'
-        onClick={() => {
-          handleClick('saved');
-        }}
+        onClick={() => handleClick('saved')}
       >
         <h1 className=''>Saved:</h1>
         <h1 className='text-orange-400'>2</h1>
@@ -78,7 +81,7 @@ const RightSide = () => {
           <h1 className='text-orange-400'>3</h1>
         </div>
 
-        <div className='my-4 flex justify-between bg-white p-3 rounded'>
+        <div className='py-4 flex justify-between bg-white p-3 rounded'>
           <h1 className='font-semibold'>Help & Support</h1>
           <IoIosArrowForward />
         </div>

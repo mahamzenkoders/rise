@@ -12,7 +12,7 @@ const OpportunityCard = () => {
   };
   return (
     <div
-      className='border p-4 rounded-lg mb-4 cursor-pointer'
+      className='border p-4 rounded-lg cursor-pointer'
       onClick={handleClick}
     >
       <div className='flex items-center gap-2'>

@@ -15,7 +15,7 @@ const JobContentSection = () => {
   };
 
   return (
-    <div className='flex-1 bg-white p-6 h-screen overflow-y-auto'>
+    <div className='flex-1 bg-white p-6 h-screen overflow-y-auto mb-20'>
       <IoMdArrowRoundBack
         onClick={handleBack}
         className='text-3xl cursor-pointer'

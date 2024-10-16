@@ -8,6 +8,8 @@ import { MdNotificationsActive } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { IoIosLogOut } from 'react-icons/io';
 import { Button } from './ui/button';
+import ProfileImage from '../../public/assets/images/Avatar.png';
+import Image from 'next/image';
 
 const ProfileNavigation = () => {
   const router = useRouter();
@@ -47,7 +49,18 @@ const ProfileNavigation = () => {
   };
 
   return (
-    <div className='w-1/4 p-6 bg-gray-100 h-screen border-r md:block hidden'>
+    <div className={`p-6 bg-gray-100 h-screen border-r  lg:w-1/4 w-full`}>
+      <div className='flex items-center mr-6 mb-6'>
+        <Image
+          src={ProfileImage}
+          alt='Profile'
+          className='w-16 h-16 rounded-full mr-4'
+        />
+        <div>
+          <h2 className='text-xl font-bold'>Taras Vlasenko</h2>
+          <button className='text-orange-500 text-sm'>Change Photo</button>
+        </div>
+      </div>
       <ul className='space-y-4'>
         {navigationItems.map((item, index) => (
           <li
@@ -70,7 +83,7 @@ const ProfileNavigation = () => {
         className='mt-48 flex gap-1 items-center text-4xl bg-white m-4 p-3 cursor-pointer'
       >
         <IoIosLogOut className='text-orange-400' />
-        <Button className=' text-black text-xl'>Log Out</Button>
+        <Button className='text-black text-xl'>Log Out</Button>
       </div>
     </div>
   );

@@ -28,7 +28,8 @@ const AllMessages: React.FC = () => {
   }, []);
 
   return (
-    <div className='w-full bg-gray-100 m-3 border-r h-screen md:hidden block overflow-y-auto scrollbar-thin'>
+    <div className='w-full bg-gray-100 p-3 border-r h-screen lg:hidden block overflow-y-auto scrollbar-thin'>
+      <h1 className='text-3xl py-4 px-3 font-semibold'>Messages</h1>
       {messages.map((msg, index) => (
         <MessagePreview
           key={index}
