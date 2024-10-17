@@ -9,7 +9,7 @@ import DashBoardInterest from '@/components/DashBoardInterest';
 
 const BioAndInterestView = () => {
   const [active, setActive] = useState<string>('bio');
-  
+
   const router = useRouter();
 
   const handleClick = () => {
@@ -24,13 +24,13 @@ const BioAndInterestView = () => {
       <h1 className='text-3xl'>Bio and Interest</h1>
       <div className='flex my-9'>
         <h1
-          className={`px-10 text-2xl text-black transition-all duration-300 ease-in-out ${active === 'bio' ? 'border-b border-b-orange-400 text-orange-400' : ''} cursor-pointer`}
+          className={`px-10  py-2 text-2xl text-black transition-all duration-300 ease-in-out ${active === 'bio' ? 'border-b border-b-orange-400 text-orange-400' : ''} cursor-pointer`}
           onClick={() => setActive('bio')}
         >
           Bio
         </h1>
         <h1
-          className={`px-10 text-2xl text-black transition-all duration-300 ease-in-out ${active === 'interest' ? 'text-orange-400 border-b border-b-orange-400' : ''} cursor-pointer`}
+          className={`px-10 py-2 text-2xl text-black transition-all duration-300 ease-in-out ${active === 'interest' ? 'text-orange-400 border-b border-b-orange-400' : ''} cursor-pointer`}
           onClick={() => setActive('interest')}
         >
           Interest
