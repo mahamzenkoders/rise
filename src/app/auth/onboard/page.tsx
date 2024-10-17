@@ -1,4 +1,4 @@
-import OnBoardView from '@/views/Authentication/OnBoard/onBoard';
+import OnBoardView from '@/views/Authentication/OnBoard/OnBoard';
 import React from 'react';
 
 const Page = () => {
