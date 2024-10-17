@@ -1,16 +1,8 @@
-import JobApplied from '@/components/JobApplied';
-import SideNav from '@/components/SideNav';
+import JobAppliedView from '@/views/Dashboard/JobApplied';
 import React from 'react';
 
 const Page = () => {
-  return (
-    <div className='flex'>
-      <div className='lg:block hidden'>
-        <SideNav />
-      </div>
-      <JobApplied />
-    </div>
-  );
+  return <JobAppliedView />;
 };
 
 export default Page;

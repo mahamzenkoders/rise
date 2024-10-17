@@ -1,8 +1,8 @@
-import DashBoardPasswordChanged from '@/components/DashBoardPasswordChanged';
+import PasswordChangedView from '@/views/Profile/PasswordChangedView';
 import React from 'react';
 
 const Page = () => {
-  return <DashBoardPasswordChanged />;
+  return <PasswordChangedView />;
 };
 
 export default Page;

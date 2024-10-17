@@ -1,16 +1,8 @@
-import ApplicationSubmitted from '@/components/ApplicationSubmitted';
-import SideNav from '@/components/SideNav';
+import ApplicationSubmittedView from '@/views/Dashboard/ApplicationSubmitted';
 import React from 'react';
 
 const Page = () => {
-  return (
-    <div className='flex'>
-      <div className='lg:block hidden'>
-        <SideNav />
-      </div>
-      <ApplicationSubmitted />
-    </div>
-  );
+  return <ApplicationSubmittedView />;
 };
 
 export default Page;

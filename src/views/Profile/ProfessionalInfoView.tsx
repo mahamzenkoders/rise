@@ -1,13 +1,13 @@
 'use client';
 import React, { useState } from 'react';
 import { AiOutlinePlus } from 'react-icons/ai';
-import { Button } from './ui/button';
-import { Switch } from './ui/switch';
-import { Input } from './ui/input';
 import { useRouter } from 'next/navigation';
 import { IoMdArrowBack } from 'react-icons/io';
+import { Switch } from '@/components/ui/switch';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
-const DashBoardProfessionalInfo = () => {
+const ProfessionalInfoView = () => {
   const [positions, setPositions] = useState([{}]);
   const [hasExperience, setHasExperience] = useState(false);
   const router = useRouter();
@@ -129,4 +129,4 @@ const DashBoardProfessionalInfo = () => {
   );
 };
 
-export default DashBoardProfessionalInfo;
+export default ProfessionalInfoView;

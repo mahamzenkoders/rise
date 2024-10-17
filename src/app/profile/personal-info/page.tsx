@@ -1,8 +1,8 @@
-import PersonalInfoPage from '@/components/DashboardPersonalInfo';
+import PersonalInfoView from '@/views/Profile/PersonaInfoView';
 import React from 'react';
 
 const page = () => {
-  return <PersonalInfoPage />;
+  return <PersonalInfoView />;
 };
 
 export default page;

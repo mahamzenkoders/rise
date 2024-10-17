@@ -1,16 +1,8 @@
-import Saved from '@/components/Saved';
-import SideNav from '@/components/SideNav';
+import SavedView from '@/views/Dashboard/Saved';
 import React from 'react';
 
 const Page = () => {
-  return (
-    <div className='flex'>
-      <div className='lg:block hidden'>
-        <SideNav />
-      </div>
-      <Saved />
-    </div>
-  );
+  return <SavedView />;
 };
 
 export default Page;

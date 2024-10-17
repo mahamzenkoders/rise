@@ -1,12 +1,8 @@
-import RightSide from '@/components/Profile';
+import HomeView from '@/views/Home/home';
 import React from 'react';
 
 const Page = () => {
-  return (
-    <div className='lg:hidden block'>
-      <RightSide />
-    </div>
-  );
+  return <HomeView />;
 };
 
 export default Page;

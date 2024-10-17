@@ -1,8 +1,8 @@
-import DashBoardBioAndInterestPage from '@/components/DashBoardBio';
+import BioAndInterestView from '@/views/Profile/BioAndInterestView';
 import React from 'react';
 
 const Page = () => {
-  return <DashBoardBioAndInterestPage />;
+  return <BioAndInterestView />;
 };
 
 export default Page;

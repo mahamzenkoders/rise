@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
-import ProfileImage from '../../public/assets/images/Avatar.png';
+import ProfileImage from '../../../public/assets/images/Avatar.png';
 import Image from 'next/image';
-import { Button } from './ui/button';
 import DatePicker from 'react-datepicker';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { IoMdArrowBack } from 'react-icons/io';
 import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 
-const PersonalInfoPage = () => {
+const PersonalInfoView = () => {
   const [formData, setFormData] = useState({
     firstName: 'Taras',
     lastName: 'Vlasenko',
@@ -201,4 +201,4 @@ const PersonalInfoPage = () => {
   );
 };
 
-export default PersonalInfoPage;
+export default PersonalInfoView;

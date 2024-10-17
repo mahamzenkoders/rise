@@ -1,8 +1,8 @@
-import DashBoardProfessionalInfo from '@/components/DashboardProfessionalInfo';
+import ProfessionalInfoView from '@/views/Profile/ProfessionalInfoView';
 import React from 'react';
 
 const Page = () => {
-  return <DashBoardProfessionalInfo />;
+  return <ProfessionalInfoView />;
 };
 
 export default Page;

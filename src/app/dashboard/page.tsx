@@ -1,16 +1,8 @@
-import MainContent from '@/components/MainContent';
-import SideNav from '@/components/SideNav';
+import DashboardView from '@/views/Dashboard/Dashboard';
 import React from 'react';
 
 const DashBoard = () => {
-  return (
-    <div className='flex'>
-      <div className='lg:block hidden'>
-        <SideNav />
-      </div>
-      <MainContent />
-    </div>
-  );
+  return <DashboardView />;
 };
 
 export default DashBoard;

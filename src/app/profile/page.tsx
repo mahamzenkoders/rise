@@ -1,12 +1,7 @@
-import ProfileNavigation from '@/components/ProfileSideBar';
-import React from 'react';
+import ProfileView from '@/views/Profile/profile';
 
 const Page = () => {
-  return (
-    <div className='lg:hidden block'>
-      <ProfileNavigation />
-    </div>
-  );
+  return <ProfileView />;
 };
 
 export default Page;
