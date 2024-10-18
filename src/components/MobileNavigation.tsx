@@ -5,7 +5,7 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import { IoHomeOutline, IoSearchOutline } from 'react-icons/io5';
 import { LuMessageSquare } from 'react-icons/lu';
 import { useRouter } from 'next/navigation';
-import { GrAdd, GrAddCircle } from 'react-icons/gr';
+import { GrAdd } from 'react-icons/gr';
 
 const MobileNavigation = ({ role }: { role: string }) => {
   const [active, setActive] = useState<string>('opportunity');
@@ -19,7 +19,7 @@ const MobileNavigation = ({ role }: { role: string }) => {
       router.push('/dashboard');
       setActive('opportunity');
     } else if (str === 'applicants') {
-      router.push('/dashboard/applicants');
+      router.push('/employer/employer-dashboard');
       setActive('applicants');
     } else if (str === 'messages') {
       router.push('/dashboard/allmessages');

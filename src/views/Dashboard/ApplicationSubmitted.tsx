@@ -6,7 +6,7 @@ const ApplicationSubmittedView = () => {
   return (
     <div className='flex'>
       <div className='lg:block hidden'>
-        <SideNav />
+        <SideNav role='jobSeeker' />
       </div>
       <ApplicationSubmitted />
     </div>

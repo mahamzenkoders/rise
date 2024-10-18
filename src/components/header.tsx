@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from './ui/button';
 
 const Header = ({ role }: { role: string }) => {
-  const [active, setActive] = useState<String>('opportunity' && 'applicant');
+  const [active, setActive] = useState<String>('applicant');
 
   const router = useRouter();
 
