@@ -7,9 +7,10 @@ import { CiSearch } from 'react-icons/ci';
 import Image from 'next/image';
 import Logo from '../../public/assets/images/Black Logo.png';
 import { useRouter } from 'next/navigation';
+import { Button } from './ui/button';
 
-const Header = () => {
-  const [active, setActive] = useState<String>('opportunity');
+const Header = ({ role }: { role: string }) => {
+  const [active, setActive] = useState<String>('opportunity' && 'applicant');
 
   const router = useRouter();
 
@@ -21,9 +22,15 @@ const Header = () => {
     if (text === 'opportunity') {
       setActive('opportunity');
       router.push('/dashboard');
-    } else {
+    } else if (text == 'applicant') {
+      setActive('applicant');
+      router.push('/employer/employer-dashboard');
+    } else if (text == 'message') {
       setActive('message');
       router.push('/dashboard/messages');
+    } else {
+      setActive('opportunity');
+      setActive('applicant');
     }
   };
   return (
@@ -35,17 +42,31 @@ const Header = () => {
         />
       </div>
       <div className='items-center gap-5 sm:flex hidden'>
-        <div
-          onClick={() => {
-            handleClick('opportunity');
-          }}
-          className={`flex gap-2 cursor-pointer items-center ${active === 'opportunity' ? `text-orange-400` : ''}`}
-        >
-          <CiSearch
-            className={`text-xl text-black font-semibold ${active === 'opportunity' ? 'text-orange-400' : ``}`}
-          />
-          <h1 className=''>Opportunities</h1>
-        </div>
+        {role == 'employer' ? (
+          <div
+            onClick={() => {
+              handleClick('applicant');
+            }}
+            className={`flex gap-2 cursor-pointer items-center ${active === 'applicant' ? `text-orange-400` : ''}`}
+          >
+            <CiSearch
+              className={`text-xl text-black font-semibold ${active === 'applicant' ? 'text-orange-400' : ``}`}
+            />
+            <h1>Applicant</h1>
+          </div>
+        ) : (
+          <div
+            onClick={() => {
+              handleClick('opportunity');
+            }}
+            className={`flex gap-2 cursor-pointer items-center ${active === 'opportunity' ? `text-orange-400` : ''}`}
+          >
+            <CiSearch
+              className={`text-xl text-black font-semibold ${active === 'opportunity' ? 'text-orange-400' : ``}`}
+            />
+            <h1>Opportunity</h1>
+          </div>
+        )}
         <div
           onClick={() => {
             handleClick('message');
@@ -59,6 +80,16 @@ const Header = () => {
         </div>
       </div>
       <div className='flex gap-3 items-center'>
+        {role == 'employer' && (
+          <div>
+            <Button
+              className='bg-orange-400 px-4 text-white'
+              variant={'outline'}
+            >
+              Post A Job
+            </Button>
+          </div>
+        )}
         <FaRegBell className={`text-2xl text-orange-400`} />
         <Avatar
           className='cursor-pointer'

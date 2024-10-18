@@ -1,7 +1,7 @@
 import Header from '@/components/header';
 import RightSide from '@/components/Profile';
 
-export default function DashBoardLayout({
+export default function EmployerDashBoardLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -9,10 +9,10 @@ export default function DashBoardLayout({
   return (
     <div>
       <div className='lg:block hidden'>
-        <Header role='jobSeeker' />
+        <Header role='employer' />
         <div className='flex min-h-screen'>
           <div className='flex-grow'>{children}</div>
-          <RightSide role='jobSeeker' />
+          <RightSide role='employer' />
         </div>
       </div>
       <div className='lg:hidden block'>{children}</div>

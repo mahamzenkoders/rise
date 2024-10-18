@@ -11,14 +11,14 @@ import { Button } from '@/components/ui/button';
 
 const PersonalInfoView = () => {
   const [formData, setFormData] = useState({
-    firstName: 'Taras',
-    lastName: 'Vlasenko',
-    dateOfBirth: '08-08-2005',
-    phone: '+234 435 687 11',
-    email: 'kalenskyi.ui@gmail.com',
-    gender: 'Male',
-    country: 'Pakistan',
-    city: 'Karachi',
+    firstName: '',
+    lastName: '',
+    dateOfBirth: '',
+    phone: '',
+    email: '',
+    gender: '',
+    country: '',
+    city: '',
   });
 
   const handleInputChange = (e: { target: { name: any; value: any } }) => {
@@ -58,6 +58,7 @@ const PersonalInfoView = () => {
           <label className='block text-sm font-semibold mb-2'>First Name</label>
           <input
             type='text'
+            placeholder='First Name'
             name='firstName'
             value={formData.firstName}
             onChange={handleInputChange}
@@ -68,6 +69,7 @@ const PersonalInfoView = () => {
           <label className='block text-sm font-semibold mb-2'>Last Name</label>
           <input
             type='text'
+            placeholder='Last Name'
             name='lastName'
             value={formData.lastName}
             onChange={handleInputChange}
@@ -95,6 +97,7 @@ const PersonalInfoView = () => {
         <div>
           <label className='block text-sm font-semibold mb-2'>Phone</label>
           <input
+            placeholder='+92 (888) 3456 755'
             type='text'
             name='phone'
             value={formData.phone}
@@ -114,8 +117,15 @@ const PersonalInfoView = () => {
             className='w-full p-2 border rounded'
           >
             <option value=''>Country</option>
+            <option value='Nigeria'>Pakistan</option>
+            <option value='Kenya'>India</option>
             <option value='Nigeria'>Nigeria</option>
             <option value='Kenya'>Kenya</option>
+            <option value='Kenya'>USA</option>
+            <option value='Kenya'>Canada</option>
+            <option value='Kenya'>Nepal</option>
+            <option value='Kenya'>Bangladesh</option>
+            <option value='Kenya'>China</option>
           </select>
         </div>
         <div>
@@ -127,6 +137,12 @@ const PersonalInfoView = () => {
             className='w-full p-2 border rounded'
           >
             <option value=''>City</option>
+            <option value='Lagos'>Karachi</option>
+            <option value='Nairobi'>Lahore</option>
+            <option value='Lagos'>Islamabad</option>
+            <option value='Nairobi'>Washington</option>
+            <option value='Lagos'>Toronto</option>
+            <option value='Nairobi'>Mumbai</option>
             <option value='Lagos'>Lagos</option>
             <option value='Nairobi'>Nairobi</option>
           </select>
@@ -138,6 +154,7 @@ const PersonalInfoView = () => {
         <input
           type='email'
           name='email'
+          placeholder='example@gmail.com'
           value={formData.email}
           onChange={handleInputChange}
           className='w-full p-2 border rounded'

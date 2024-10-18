@@ -2,16 +2,7 @@
 
 import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
 import { ChartConfig, ChartContainer } from '@/components/ui/chart';
-
-const chartData = [
-  { day: 'Mon', profile: 186 },
-  { day: 'Tue', profile: 305 },
-  { day: 'Wed', profile: 237 },
-  { day: 'Thu', profile: 102 },
-  { day: 'Fri', profile: 209 },
-  { day: 'Sat', profile: 214 },
-  { day: 'Sun', profile: 100 },
-];
+import { useAppContext } from '@/context';
 
 const chartConfig = {
   desktop: {
@@ -21,12 +12,13 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function ProfileStats() {
+  const { profile } = useAppContext();
   return (
     <ChartContainer
       config={chartConfig}
       className='min-h-[200px] w-full'
     >
-      <BarChart data={chartData}>
+      <BarChart data={profile}>
         <defs>
           <linearGradient
             id='colorProfile'

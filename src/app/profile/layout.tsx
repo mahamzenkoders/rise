@@ -9,7 +9,7 @@ export default function ProfieLayout({
   return (
     <div>
       <div className='lg:block hidden'>
-        <Header />
+        <Header role='employer' />
         <div className='flex min-h-screen'>
           <ProfileNavigation />
           <div className='flex-grow'>{children}</div>

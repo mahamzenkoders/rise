@@ -12,6 +12,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { SignValuesInterface } from '@/types/Interfaces/signup.interface';
 import { SignUplValues } from '@/app/FormValues/SignUpValues';
 import { SignUpSchema } from '@/schema/signup.schema';
+import { setCookieClientSideFn } from '@/utils/storage.util';
 
 interface IRegistrationViewProps {}
 
@@ -29,18 +30,31 @@ const RegistrationView: FC<IRegistrationViewProps> = () => {
     handleClick();
   };
 
+  const HandleRole = (str: string) => {
+    if (str === 'rising') {
+      setActive('rising');
+      setCookieClientSideFn('role', 'jobSeeker');
+    } else if (str === 'opportunity') {
+      setActive('opportunity');
+      setCookieClientSideFn('role', 'employer');
+    } else {
+      setActive('rising');
+      setCookieClientSideFn('role', 'jobSeeker');
+    }
+  };
+
   return (
     <div className='flex justify-center items-center flex-col'>
       <div className='flex justify-between my-2'>
         <h1
           className={`pr-4 text-sm text-black transition-all duration-300 ease-in-out ${active === 'rising' ? 'border-b border-b-orange-400 text-orange-400' : ''} cursor-pointer`}
-          onClick={() => setActive('rising')}
+          onClick={() => HandleRole('rising')}
         >
           RISING LEADER
         </h1>
         <h1
           className={`pl-4 text-sm text-black transition-all duration-300 ease-in-out ${active === 'opportunity' ? 'text-orange-400 border-b border-b-orange-400' : ''} cursor-pointer`}
-          onClick={() => setActive('opportunity')}
+          onClick={() => HandleRole('opportunity')}
         >
           OPPORTUNITY PARTNER
         </h1>

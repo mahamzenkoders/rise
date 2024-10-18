@@ -1,13 +1,27 @@
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
+import { getCookieFn } from './utils/storage.util';
 
 export function middleware(req: NextRequest) {
   const token = req.cookies.get('accessToken')?.value;
+  const role = req.cookies.get('role')?.value;
+
+ 
 
   const { pathname } = req.nextUrl.clone();
 
-  if (pathname === "/") {
+  // if (pathname === "/") {
+  //   return NextResponse.redirect(new URL("/dashboard", req.url));
+  // }
+
+  if(role=='jobSeeker'&& pathname=='/')
+  {
     return NextResponse.redirect(new URL("/dashboard", req.url));
+  }
+
+  if(role=='employer' && pathname=='/')
+  {
+    return NextResponse.redirect(new URL("/employer/employer-dashboard", req.url));
   }
   // const publicRoutes = ['/login'];
 

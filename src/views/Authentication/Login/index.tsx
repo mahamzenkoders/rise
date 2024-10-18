@@ -11,12 +11,26 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { LoginValuesInterface } from '@/types/Interfaces/login.interface';
 import { LoginValues } from '@/app/FormValues/LoginValues';
 import { loginSchema } from '@/schema/login.schema';
+import { setCookieClientSideFn } from '@/utils/storage.util';
 
 const LoginPage = () => {
   const [active, setActive] = useState<string>('rising');
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const router = useRouter();
+
+  const HandleRole = (str: string) => {
+    if (str === 'rising') {
+      setActive('rising');
+      setCookieClientSideFn('role', 'jobSeeker');
+    } else if (str === 'opportunity') {
+      setActive('opportunity');
+      setCookieClientSideFn('role', 'employer');
+    } else {
+      setActive('rising');
+      setCookieClientSideFn('role', 'jobSeeker');
+    }
+  };
 
   const handleCLick = () => {
     router.push('/auth/onboard');
@@ -33,13 +47,13 @@ const LoginPage = () => {
       <div className='flex justify-between my-9'>
         <h1
           className={`pr-4 text-sm text-black transition-all duration-300 ease-in-out ${active === 'rising' ? 'border-b border-b-orange-400 text-orange-400' : ''} cursor-pointer`}
-          onClick={() => setActive('rising')}
+          onClick={() => HandleRole('rising')}
         >
           RISING LEADER
         </h1>
         <h1
           className={`pl-4 text-sm text-black transition-all duration-300 ease-in-out ${active === 'opportunity' ? 'text-orange-400 border-b border-b-orange-400' : ''} cursor-pointer`}
-          onClick={() => setActive('opportunity')}
+          onClick={() => HandleRole('opportunity')}
         >
           OPPORTUNITY PARTNER
         </h1>

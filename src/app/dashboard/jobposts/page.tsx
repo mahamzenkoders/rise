@@ -1,8 +1,8 @@
-import JobAppliedView from '@/views/Dashboard/JobApplied';
+import JobPostView from '@/views/Dashboard/JobPost';
 import React from 'react';
 
 const Page = () => {
-  return <JobAppliedView />;
+  return <JobPostView />;
 };
 
 export default Page;

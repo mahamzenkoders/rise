@@ -2,6 +2,9 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { IoMdArrowRoundBack } from 'react-icons/io';
+import { FaBookmark } from 'react-icons/fa';
+import { GoShareAndroid } from 'react-icons/go';
+import { CiMenuKebab } from 'react-icons/ci';
 
 const JobContentSection = () => {
   const router = useRouter();
@@ -16,10 +19,19 @@ const JobContentSection = () => {
 
   return (
     <div className='flex-1 bg-white p-6 h-screen overflow-y-auto mb-20'>
-      <IoMdArrowRoundBack
-        onClick={handleBack}
-        className='text-3xl cursor-pointer'
-      />
+      <div className='flex justify-between w-full'>
+        <div>
+          <IoMdArrowRoundBack
+            onClick={handleBack}
+            className='text-3xl cursor-pointer'
+          />
+        </div>
+        <div className='flex gap-3 text-2xl'>
+          <FaBookmark className='text-orange-400 cursor-pointer' />
+          <GoShareAndroid className='cursor-pointer' />
+          <CiMenuKebab className='cursor-pointer' />
+        </div>
+      </div>
       <h1 className='text-3xl font-bold my-3'>
         Search for a talent for tech startup
       </h1>

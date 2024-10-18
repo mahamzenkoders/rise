@@ -4,7 +4,7 @@ import React from 'react';
 const HomeView = () => {
   return (
     <div className='lg:hidden block'>
-      <RightSide />
+      <RightSide role='employer' />
     </div>
   );
 };
