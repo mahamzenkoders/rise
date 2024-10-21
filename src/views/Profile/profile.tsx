@@ -4,7 +4,7 @@ import React from 'react';
 const ProfileView = () => {
   return (
     <div className='lg:hidden block'>
-      <ProfileNavigation />
+      <ProfileNavigation role={'jobSeeker'} />
     </div>
   );
 };
