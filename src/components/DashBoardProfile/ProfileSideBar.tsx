@@ -7,8 +7,8 @@ import { IoDocumentTextOutline } from 'react-icons/io5';
 import { MdNotificationsActive } from 'react-icons/md';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { IoIosLogOut } from 'react-icons/io';
-import { Button } from './ui/button';
-import ProfileImage from '../../public/assets/images/Avatar.png';
+import { Button } from '../ui/button';
+import ProfileImage from '../../../public/assets/images/Avatar.png';
 import Image from 'next/image';
 
 const ProfileNavigation = ({ role }: { role: string }) => {

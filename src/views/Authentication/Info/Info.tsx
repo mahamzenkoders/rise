@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import ProfileInfo from '@/components/personalinfo';
+import ProfileInfo from '@/components/Profile/personalinfo';
 import { Formik, Form, FormikValues } from 'formik';
 import {
   PersonalInfoSchema,
@@ -13,7 +13,7 @@ import { InitialValues } from '@/app/FormValues/InitialValues';
 import { Button } from '@/components/ui/button';
 import AreasOfInterest from '@/components/areaOfInterest';
 import { IoMdArrowRoundBack } from 'react-icons/io';
-import ProfessionalInfo from '@/components/ProfessionalInfo';
+import ProfessionalInfo from '@/components/Profile/ProfessionalInfo';
 import Bio from '@/components/Bio';
 import { useRouter } from 'next/navigation';
 

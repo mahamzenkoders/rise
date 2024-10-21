@@ -1,6 +1,6 @@
 import { Applicant } from '@/types/Interfaces/applicant.interface';
 import Image from 'next/image';
-import ProfileImage from '../../public/assets/images/usericon.png';
+import ProfileImage from '../../../public/assets/images/usericon.png';
 
 const ApplicantProfileSideBar = ({ applicant }: { applicant: Applicant }) => {
   return (

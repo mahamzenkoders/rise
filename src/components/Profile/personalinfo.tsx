@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { FaCalendarAlt } from 'react-icons/fa';
-import { Label } from './ui/label';
+import { Label } from '../ui/label';
 import { ErrorMessage, Field, useFormikContext } from 'formik';
 
 const ProfileInfo = () => {

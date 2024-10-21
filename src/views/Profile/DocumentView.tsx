@@ -1,6 +1,6 @@
 import { documents } from '@/app/documentValues/documentValues';
-import DocumentsList from '@/components/DocumentList';
-import NoDocuments from '@/components/NoDocumentPage';
+import DocumentsList from '@/components/DashBoardProfile/DocumentList';
+import NoDocuments from '@/components/DashBoardProfile/NoDocumentPage';
 import React from 'react';
 
 const DocumentView = () => {

@@ -1,5 +1,5 @@
-import Header from '@/components/header';
-import RightSide from '@/components/Profile';
+import Header from '@/components/Dashboard/header';
+import RightSide from '@/components/RightSide/Profile';
 
 export default function DashBoardLayout({
   children,

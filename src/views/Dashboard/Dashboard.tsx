@@ -1,5 +1,5 @@
-import MainContent from '@/components/MainContent';
-import SideNav from '@/components/SideNav';
+import MainContent from '@/components/Dashboard/MainContent';
+import SideNav from '@/components/Filter/SideNav';
 import React from 'react';
 
 const DashboardView = () => {

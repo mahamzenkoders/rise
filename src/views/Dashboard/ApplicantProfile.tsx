@@ -1,6 +1,6 @@
 import { applicant } from '@/app/applicationValues/applicationvalues';
-import ApplicantContentSection from '@/components/ApplicantContentSection';
-import ApplicantProfileSideBar from '@/components/ApplicantSideBar';
+import ApplicantContentSection from '@/components/Applicant/ApplicantContentSection';
+import ApplicantProfileSideBar from '@/components/Applicant/ApplicantSideBar';
 import React from 'react';
 
 const ApplicantProfileView = () => {

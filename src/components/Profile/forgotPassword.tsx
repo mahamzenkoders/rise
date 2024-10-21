@@ -1,6 +1,6 @@
 import { ErrorMessage, Field } from 'formik';
 import React from 'react';
-import { Label } from './ui/label';
+import { Label } from '../ui/label';
 
 const Forgot = () => {
   return (

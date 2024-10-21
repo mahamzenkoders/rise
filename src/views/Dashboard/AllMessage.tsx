@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { MessageViewProps } from '@/types/Interfaces/messagepreview';
-import MessagePreview from '@/components/messagepreview';
+import MessagePreview from '@/components/Filter/messagepreview';
 import { SkeletonAllMessage } from '@/components/skeleton/skeleton.message';
 
 const AllMessagesView: React.FC = () => {

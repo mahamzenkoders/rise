@@ -1,13 +1,13 @@
 'use client';
 import React, { useState } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { FaRegBell } from 'react-icons/fa';
 import { FiMessageCircle } from 'react-icons/fi';
 import { CiSearch } from 'react-icons/ci';
 import Image from 'next/image';
-import Logo from '../../public/assets/images/Black Logo.png';
+import Logo from '../../../public/assets/images/Black Logo.png';
 import { useRouter } from 'next/navigation';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 const Header = ({ role }: { role: string }) => {
   const [active, setActive] = useState<String>('applicant');
@@ -109,7 +109,7 @@ const Header = ({ role }: { role: string }) => {
           <div>
             <Button
               onClick={handlePost}
-              className='bg-orange-400 px-4 text-white'
+              className='bg-orange-400 px-4 text-white rounded-full'
               variant={'outline'}
             >
               Create Post

@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Input } from './ui/input';
-import ProfileImage from '../../public/assets/images/usericon.png';
+import ProfileImage from '../../../public/assets/images/usericon.png';
 import Image from 'next/image';
 import { IoSend } from 'react-icons/io5';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import { MessageBubbleProps } from '@/types/Interfaces/messagebubble';
 import { useRouter } from 'next/navigation';
 import MessageBubble from './messagebubble';
+import { Input } from '../ui/input';
 
 const Message: React.FC = () => {
   const [messages, setMessages] = useState<MessageBubbleProps[]>([

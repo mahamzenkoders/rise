@@ -1,4 +1,4 @@
-import RightSide from '@/components/Profile';
+import RightSide from '@/components/RightSide/Profile';
 import React from 'react';
 
 const HomeView = () => {

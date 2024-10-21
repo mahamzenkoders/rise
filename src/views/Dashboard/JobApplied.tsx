@@ -1,5 +1,5 @@
-import JobApplied from '@/components/JobApplied';
-import SideNav from '@/components/SideNav';
+import JobApplied from '@/components/Job/JobApplied';
+import SideNav from '@/components/Filter/SideNav';
 import React from 'react';
 
 const JobAppliedView = () => {

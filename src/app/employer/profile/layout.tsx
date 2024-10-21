@@ -1,5 +1,5 @@
-import Header from '@/components/header';
-import ProfileNavigation from '@/components/ProfileSideBar';
+import Header from '@/components/Dashboard/header';
+import ProfileNavigation from '@/components/DashBoardProfile/ProfileSideBar';
 
 export default function EmployerProfileLayout({
   children,

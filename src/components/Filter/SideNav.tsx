@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import FilterJobSeeker from './FilterJobSeeker';
 import FilterEmployer from './FilterEmployer';
 

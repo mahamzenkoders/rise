@@ -1,5 +1,5 @@
-import AllMessages from '@/components/allmessages';
-import Message from '@/components/message';
+import AllMessages from '@/components/Message/allmessages';
+import Message from '@/components/Message/message';
 import React from 'react';
 
 const MessageView = () => {

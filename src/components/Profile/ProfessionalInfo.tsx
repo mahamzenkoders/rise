@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Field, ErrorMessage, useFormikContext } from 'formik';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import { Experience, formValues } from '@/types/Interfaces/form.values';
 
 const ProfessionalInfo: React.FC = () => {
@@ -85,7 +85,7 @@ const ProfessionalInfo: React.FC = () => {
             onChange={() => {
               setHasExperience(!hasExperience);
               if (!hasExperience) {
-                addExperience(); 
+                addExperience();
               }
             }}
             className='ml-2 toggle-checkbox'

@@ -1,5 +1,5 @@
-import JobContentSection from '@/components/jobContent';
-import JobDetailsSidebar from '@/components/jobDetailsSideBar';
+import JobContentSection from '@/components/Job/jobContent';
+import JobDetailsSidebar from '@/components/Job/jobDetailsSideBar';
 import React from 'react';
 
 const JobPostView = () => {

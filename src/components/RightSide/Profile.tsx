@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { IoIosArrowForward } from 'react-icons/io';
 import { ProfileStats } from './chart';
 import { useRouter, usePathname } from 'next/navigation';

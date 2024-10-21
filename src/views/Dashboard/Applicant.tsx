@@ -1,5 +1,5 @@
-import ApplicantSection from '@/components/ApplicantSection';
-import SideNav from '@/components/SideNav';
+import ApplicantSection from '@/components/Applicant/ApplicantSection';
+import SideNav from '@/components/Filter/SideNav';
 import React from 'react';
 
 const ApplicantView = () => {

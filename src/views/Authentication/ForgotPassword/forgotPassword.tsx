@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import Forgot from '@/components/forgotPassword';
-import OTP from '@/components/otp';
+import Forgot from '@/components/Profile/forgotPassword';
+import OTP from '@/components/Profile/otp';
 import { Form, Formik, FormikValues } from 'formik';
 import { Button } from '@/components/ui/button';
 import { ForgetPassword } from '@/app/FormValues/ForgetInitialValues';
@@ -11,7 +11,7 @@ import {
   OTPSchema,
   NewPasswordSchema,
 } from '@/schema/forgotSchema';
-import ResetPassword from '@/components/newpassword';
+import ResetPassword from '@/components/Profile/newpassword';
 import { useRouter } from 'next/navigation';
 
 const ForgotPasswordView = () => {

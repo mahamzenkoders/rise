@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { SkeletonAllMessage } from './skeleton/skeleton.message';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import { SkeletonAllMessage } from '../skeleton/skeleton.message';
 
 interface User {
   name: string;

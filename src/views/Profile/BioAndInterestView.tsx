@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { IoMdArrowBack } from 'react-icons/io';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import DashBoardInterest from '@/components/DashBoardInterest';
+import DashBoardInterest from '@/components/DashBoardProfile/DashBoardInterest';
 
 const BioAndInterestView = () => {
   const [active, setActive] = useState<string>('bio');

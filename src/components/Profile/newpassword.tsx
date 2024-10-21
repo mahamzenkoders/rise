@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage, useFormikContext } from 'formik';
 import React from 'react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 
 const ResetPassword = () => {
   const { setFieldValue } = useFormikContext();

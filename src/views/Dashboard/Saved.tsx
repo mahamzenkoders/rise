@@ -1,5 +1,5 @@
-import Saved from '@/components/Saved';
-import SideNav from '@/components/SideNav';
+import Saved from '@/components/Dashboard/Saved';
+import SideNav from '@/components/Filter/SideNav';
 import React from 'react';
 
 const SavedView = () => {

@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import documentImg from '../../public/assets/images/Document.png';
-import { Button } from './ui/button';
+import documentImg from '../../../public/assets/images/Document.png';
+import { Button } from '../ui/button';
 
 const NoDocuments: React.FC = () => {
   return (
