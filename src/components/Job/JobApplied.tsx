@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Tick from '../../public/assets/images/tick.png';
+import Tick from '../../../public/assets/images/tick.png';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
@@ -10,7 +10,7 @@ const PasswordChanged = () => {
   const router = useRouter();
 
   const handleCLick = () => {
-router.push('/dashboard/jobposts');
+    router.push('/dashboard/jobposts');
   };
   return (
     <div className='flex flex-col justify-center m-auto items-center'>

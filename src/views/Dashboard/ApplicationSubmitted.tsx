@@ -1,4 +1,5 @@
-import ApplicationSubmitted from '@/components/ApplicationSubmitted';
+
+import ApplicationSubmitted from '@/components/Applicant/ApplicationSubmitted';
 import SideNav from '@/components/Filter/SideNav';
 import React from 'react';
 
