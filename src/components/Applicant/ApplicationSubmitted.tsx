@@ -1,5 +1,5 @@
 import React from 'react';
-import OpportunityCard from './opportunitycard';
+import OpportunityCard from '../Dashboard/opportunitycard';
 
 const ApplicationSubmitted = () => {
   return (
