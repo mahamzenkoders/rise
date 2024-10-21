@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Label } from './ui/label';
 import { useFormikContext } from 'formik';
 import { formValues } from '@/types/Interfaces/form.values';
+import { Label } from '../ui/label';
 
 interface Category {
   label: string;

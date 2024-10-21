@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { MessageViewProps } from '@/types/Interfaces/messagepreview';
-import MessagePreview from '@/components/Filter/messagepreview';
 import { SkeletonAllMessage } from '@/components/skeleton/skeleton.message';
+import MessagePreview from '@/components/Message/messagepreview';
 
 const AllMessagesView: React.FC = () => {
   const [messages, setMessages] = useState<MessageViewProps[]>([]);

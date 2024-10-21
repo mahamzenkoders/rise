@@ -11,11 +11,11 @@ import {
 } from '@/schema/FormSchema';
 import { InitialValues } from '@/app/FormValues/InitialValues';
 import { Button } from '@/components/ui/button';
-import AreasOfInterest from '@/components/areaOfInterest';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import ProfessionalInfo from '@/components/Profile/ProfessionalInfo';
-import Bio from '@/components/Bio';
 import { useRouter } from 'next/navigation';
+import AreasOfInterest from '@/components/Profile/areaOfInterest';
+import Bio from '@/components/Profile/Bio';
 
 const InfoView = () => {
   const [step, setStep] = useState<number>(1);

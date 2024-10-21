@@ -1,5 +1,5 @@
 import { Field, ErrorMessage } from 'formik';
-import { Label } from './ui/label';
+import { Label } from '../ui/label';
 
 const Bio = () => {
   return (
