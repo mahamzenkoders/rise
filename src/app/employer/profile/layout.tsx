@@ -1,7 +1,7 @@
 import Header from '@/components/header';
 import ProfileNavigation from '@/components/ProfileSideBar';
 
-export default function ProfieLayout({
+export default function EmployerProfileLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ export default function ProfieLayout({
       <div className='lg:block hidden'>
         <Header role='employer' />
         <div className='flex min-h-screen'>
-          <ProfileNavigation role='jobSeeker' />
+          <ProfileNavigation role='employer' />
           <div className='flex-grow'>{children}</div>
         </div>
       </div>

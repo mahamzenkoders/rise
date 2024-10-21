@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import { Input } from './ui/input';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import ProfileImage from '../../public/assets/images/usericon.png';
+import Image from 'next/image';
 import { IoSend } from 'react-icons/io5';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import { MessageBubbleProps } from '@/types/Interfaces/messagebubble';
@@ -56,13 +57,13 @@ const Message: React.FC = () => {
           onClick={handleClick}
           className='md:hidden block'
         />
-        <Avatar>
-          <AvatarImage
-            src='https://github.com/shadcn.png'
-            alt='@shadcn'
-          />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
+        <Image
+          src={ProfileImage}
+          alt='Applicant'
+          height={40}
+          width={40}
+          className='rounded-full mb-4'
+        />
         Gerardo Menard
       </div>
       <div className='overflow-y-auto h-[70%]'>

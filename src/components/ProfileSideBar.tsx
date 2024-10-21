@@ -11,11 +11,11 @@ import { Button } from './ui/button';
 import ProfileImage from '../../public/assets/images/Avatar.png';
 import Image from 'next/image';
 
-const ProfileNavigation = () => {
+const ProfileNavigation = ({ role }: { role: string }) => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const navigationItems = [
+  const seekerNavigation = [
     {
       name: 'Personal Information',
       path: '/profile/personal-info',
@@ -44,6 +44,28 @@ const ProfileNavigation = () => {
     },
   ];
 
+  const employerNavigation = [
+    {
+      name: 'Personal Information',
+      path: '/employer/profile/personal-info',
+      icon: <CgProfile />,
+    },
+    {
+      name: 'Company Information',
+      path: '/employer/profile/company-info',
+      icon: <FaGraduationCap />,
+    },
+    {
+      name: 'Notifications Preferences',
+      path: '/employer/profile/notification',
+      icon: <MdNotificationsActive />,
+    },
+    {
+      name: 'Change Password',
+      path: '/employer/profile/change-password',
+      icon: <RiLockPasswordLine />,
+    },
+  ];
   const handleNavigation = (path: string) => {
     router.push(path);
   };
@@ -62,20 +84,35 @@ const ProfileNavigation = () => {
         </div>
       </div>
       <ul className='space-y-4'>
-        {navigationItems.map((item, index) => (
-          <li
-            key={index}
-            onClick={() => handleNavigation(item.path)}
-            className={`cursor-pointer text-3xl items-center bg-white p-3 m-4 ${
-              pathname === item.path ? 'text-orange-500' : 'text-gray-600'
-            }`}
-          >
-            <div className='flex gap-3 text-xl p-2 items-center'>
-              {item.icon}
-              {item.name}
-            </div>
-          </li>
-        ))}
+        {role === 'employer'
+          ? employerNavigation.map((item, index) => (
+              <li
+                key={index}
+                onClick={() => handleNavigation(item.path)}
+                className={`cursor-pointer text-3xl items-center bg-white p-3 m-4 ${
+                  pathname === item.path ? 'text-orange-500' : 'text-gray-600'
+                }`}
+              >
+                <div className='flex gap-3 text-xl p-2 items-center'>
+                  {item.icon}
+                  {item.name}
+                </div>
+              </li>
+            ))
+          : seekerNavigation.map((item, index) => (
+              <li
+                key={index}
+                onClick={() => handleNavigation(item.path)}
+                className={`cursor-pointer text-3xl items-center bg-white p-3 m-4 ${
+                  pathname === item.path ? 'text-orange-500' : 'text-gray-600'
+                }`}
+              >
+                <div className='flex gap-3 text-xl p-2 items-center'>
+                  {item.icon}
+                  {item.name}
+                </div>
+              </li>
+            ))}
       </ul>
 
       <div

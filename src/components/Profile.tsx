@@ -6,19 +6,13 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { ProfileStats } from './chart';
 import { useRouter, usePathname } from 'next/navigation';
 import { useAppContext } from '@/context';
+import SeekerProfile from './SeekerProfile';
+import EmployerProfile from './EmployerProfile';
 
 const RightSide = ({ role }: { role: string }) => {
   const { completionProfile } = useAppContext();
   const pathname = usePathname();
   const router = useRouter();
-
-  const handleClick = (str: string) => {
-    if (str === 'saved') {
-      router.push('/dashboard/saved');
-    } else {
-      router.push('/dashboard/application-submitted');
-    }
-  };
 
   const isDashboard =
     pathname.startsWith('/dashboard') ||
@@ -53,39 +47,9 @@ const RightSide = ({ role }: { role: string }) => {
         </div>
         <p className='text-xs mt-1'>{completionProfile}% complete</p>
       </div>
-      <div
-        className='my-4 bg-white p-3 rounded flex justify-between cursor-pointer'
-        onClick={() => handleClick('application')}
-      >
-        <h1 className=''>
-          {role == 'employer' ? 'Active Posts' : 'Application Submitted'}
-        </h1>
-        <h1 className='text-orange-400'>4</h1>
-      </div>
-      <div className='my-4 bg-white p-3 rounded flex justify-between cursor-pointer'>
-        <h1 className=''>
-          {role == 'employer' ? 'Active Applications' : 'Recommendation'}
-        </h1>
-        <h1 className='text-orange-400'>340</h1>
-      </div>
-      <div
-        className='my-4 bg-white p-3 rounded flex justify-between cursor-pointer'
-        onClick={() => handleClick('saved')}
-      >
-        <h1 className=''>{role == 'employer' ? 'Shortlist' : 'Saved'}</h1>
-        <h1 className='text-orange-400'>2</h1>
-      </div>
-      {role == 'employer' ? (
-        <div
-          className='my-4 bg-white p-3 rounded flex justify-between cursor-pointer'
-          onClick={() => handleClick('saved')}
-        >
-          <h1 className=''>Saved</h1>
-          <h1 className='text-orange-400'>4</h1>
-        </div>
-      ) : (
-        ''
-      )}
+
+      {role === 'employer' ? <EmployerProfile /> : <SeekerProfile />}
+
       <div className='mb-4'>
         <div className='mt-2 h-full bg-white mb-7 py-3'>
           <h4 className='font-bold text-gray-900 px-3'>

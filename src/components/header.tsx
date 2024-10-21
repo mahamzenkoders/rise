@@ -14,8 +14,16 @@ const Header = ({ role }: { role: string }) => {
 
   const router = useRouter();
 
-  const handleProfile = () => {
-    router.push('/profile/personal-info');
+  const handleProfile = (str: string) => {
+    if (str === 'employer') {
+      router.push('/employer/profile/personal-info');
+    } else {
+      router.push('/profile/personal-info');
+    }
+  };
+
+  const handlePost = () => {
+    router.push('/employer/employer-dashboard/create-post');
   };
 
   const handleClick = (text: string) => {
@@ -25,8 +33,11 @@ const Header = ({ role }: { role: string }) => {
     } else if (text == 'applicant') {
       setActive('applicant');
       router.push('/employer/employer-dashboard');
-    } else if (text == 'message') {
-      setActive('message');
+    } else if (text == 'employer_message') {
+      setActive('employer_message');
+      router.push('/employer/employer-dashboard/messages');
+    } else if (text == 'seeker_message') {
+      setActive('seeker_message');
       router.push('/dashboard/messages');
     } else {
       setActive('opportunity');
@@ -67,40 +78,68 @@ const Header = ({ role }: { role: string }) => {
             <h1>Opportunity</h1>
           </div>
         )}
-        <div
-          onClick={() => {
-            handleClick('message');
-          }}
-          className={`flex gap-2 cursor-pointer items-center ${active === 'message' ? `text-orange-400` : ''}`}
-        >
-          <FiMessageCircle
-            className={`text-xl ${active === 'message' ? 'text-orange-400' : ``}`}
-          />
-          <h1 className=''>Messages</h1>
-        </div>
+        {role === 'employer' ? (
+          <div
+            onClick={() => {
+              handleClick('employer_message');
+            }}
+            className={`flex gap-2 cursor-pointer items-center ${active === 'employer_message' ? `text-orange-400` : ''}`}
+          >
+            <FiMessageCircle
+              className={`text-xl ${active === 'employer_message' ? 'text-orange-400' : ``}`}
+            />
+            <h1 className=''>Messages</h1>
+          </div>
+        ) : (
+          <div
+            onClick={() => {
+              handleClick('seeker_message');
+            }}
+            className={`flex gap-2 cursor-pointer items-center ${active === 'seeker_message' ? `text-orange-400` : ''}`}
+          >
+            <FiMessageCircle
+              className={`text-xl ${active === 'seeker_message' ? 'text-orange-400' : ``}`}
+            />
+            <h1 className=''>Messages</h1>
+          </div>
+        )}
       </div>
       <div className='flex gap-3 items-center'>
         {role == 'employer' && (
           <div>
             <Button
+              onClick={handlePost}
               className='bg-orange-400 px-4 text-white'
               variant={'outline'}
             >
-              Post A Job
+              Create Post
             </Button>
           </div>
         )}
         <FaRegBell className={`text-2xl text-orange-400`} />
-        <Avatar
-          className='cursor-pointer'
-          onClick={handleProfile}
-        >
-          <AvatarImage
-            src='https://github.com/shadcn.png'
-            alt='@shadcn'
-          />
-          <AvatarFallback>CN</AvatarFallback>
-        </Avatar>
+        {role === 'employer' ? (
+          <Avatar
+            className='cursor-pointer'
+            onClick={() => handleProfile('employer')}
+          >
+            <AvatarImage
+              src='https://github.com/shadcn.png'
+              alt='@shadcn'
+            />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+        ) : (
+          <Avatar
+            className='cursor-pointer'
+            onClick={() => handleProfile('seeker')}
+          >
+            <AvatarImage
+              src='https://github.com/shadcn.png'
+              alt='@shadcn'
+            />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+        )}
       </div>
     </div>
   );

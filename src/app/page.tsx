@@ -1,10 +1,5 @@
-import { getCookieFn } from '@/utils/storage.util';
-import React from 'react';
+import { redirect } from 'next/navigation';
 
-const HomeView = () => {
-  const role = getCookieFn('role');
-  console.log(role);
-  <div>{role}</div>;
-};
-
-export default HomeView;
+export default function Home() {
+  // return redirect('/employer/employer-dashboard');
+}
