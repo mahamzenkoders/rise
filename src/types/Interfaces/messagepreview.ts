@@ -7,5 +7,5 @@ export interface MessageViewProps {
   
   interface User {
     name: string;
-    profilePicture: string;
+    picture: string;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ActivePostView = () => {
-  return <div>ActivePostView</div>;
+  return <div>Active View</div>;
 };
 
 export default ActivePostView;

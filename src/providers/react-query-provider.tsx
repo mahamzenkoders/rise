@@ -21,6 +21,7 @@ interface IReactQueryProviderProps {
 const ReactQueryProvider: FC<IReactQueryProviderProps> = ({ children }) => (
   <QueryClientProvider client={queryClient}>
     <>
+      {console.log('hello')}
       <ReactQueryDevtools
         initialIsOpen={false}
         client={queryClient}

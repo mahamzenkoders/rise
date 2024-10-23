@@ -12,7 +12,7 @@ import { Input } from '../ui/input';
 
 const Message: React.FC = () => {
   const [messages, setMessages] = useState<MessageBubbleProps[]>([
-    { text: 'Hello Taras how are you?', time: '04:12 PM', isSender: false },
+    { text: 'Hello Gerardo how are you?', time: '04:12 PM', isSender: false },
     {
       text: 'Sure, I’d be happy to tell you more about my work!',
       time: '12:36 PM',
@@ -64,7 +64,7 @@ const Message: React.FC = () => {
           width={40}
           className='rounded-full mb-4'
         />
-        Gerardo Menard
+        <h1>Gerardo Menard</h1>
       </div>
       <div className='overflow-y-auto h-[70%]'>
         {messages.map((msg, index) => (

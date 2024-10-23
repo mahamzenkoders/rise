@@ -23,7 +23,7 @@ const Header = ({ role }: { role: string }) => {
   };
 
   const handlePost = () => {
-    router.push('/employer/employer-dashboard/create-post');
+    router.push('/employer/employer-dashboard/posts/create-post');
   };
 
   const handleClick = (text: string) => {
